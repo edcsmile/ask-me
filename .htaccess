@@ -1,0 +1,44 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(images|img|admin|css|js|inc)($|/) - [L]
+
+ErrorDocument 404 /index.php
+
+RewriteRule giris$ account.php
+
+RewriteRule profil/(.*)/bilgi$ profile_about.php?nickname=$1
+
+RewriteRule profil/(.*)/soru-liste/([0-9]+)$ profile.php?nickname=$1&soru=1&sayfa=$2
+RewriteRule profil/(.*)/soru-liste$ profile.php?nickname=$1&soru=1
+
+RewriteRule profil/(.*)/cevap-liste/([0-9]+)$ profile.php?nickname=$1&cevap=1&sayfa=$2
+RewriteRule profil/(.*)/cevap-liste$ profile.php?nickname=$1&cevap=1
+
+RewriteRule profil/(.*)$ profile.php?nickname=$1
+RewriteRule profil$ profile.php
+
+RewriteRule profil-duzenle$ profile_edit.php
+
+RewriteRule soru/(.*)/([0-9]+)$ askread.php?page=$1&sayfa=$2
+RewriteRule soru/(.*)$ askread.php?page=$1
+RewriteRule soru-sor$ ask.php
+
+RewriteRule kategori/(.*)/([0-9]+)$ kategori.php?kategori=$1&sayfa=$2
+RewriteRule kategori/(.*)$ kategori.php?kategori=$1
+RewriteRule kategori/$ kategori.php
+RewriteRule kategori$ kategori.php
+
+RewriteRule sorular/([0-9]+)$ sorular.php?sayfa=$1
+RewriteRule sorular/$ sorular.php
+RewriteRule sorular$ sorular.php
+
+RewriteRule bilgilendirme/([0-9]+)$ bilgilendirme.php?sayfa=$1
+RewriteRule bilgilendirme/$ bilgilendirme.php
+RewriteRule bilgilendirme$ bilgilendirme.php
+
+RewriteRule sabitkonu/([0-9]+)$ sabitkonu.php?sayfa=$1
+RewriteRule sabitkonu/$ sabitkonu.php
+RewriteRule sabitkonu$ sabitkonu.php
+
+RewriteRule cikis$ logout.php
+
