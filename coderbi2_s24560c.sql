@@ -19,25 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `coderbi2_s24560c`
+-- Veritabanı: `root_s24560c`
 --
-
-DELIMITER $$
---
--- Yordamlar
---
-CREATE DEFINER=`coderbi2`@`localhost` PROCEDURE `CategoryPointAdd` (IN `Param` INT(11))  BEGIN
-    UPDATE
-        category_rows
-    SET
-        point = point + 1
-    WHERE
-        id = Param;
-END$$
-
-DELIMITER ;
-
--- --------------------------------------------------------
 
 --
 -- Tablo için tablo yapısı `category_name`
